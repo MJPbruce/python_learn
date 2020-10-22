@@ -1,0 +1,3 @@
+loadbin 1.bin 0xEC000
+verifybin 1.bin 0xEC000
+
