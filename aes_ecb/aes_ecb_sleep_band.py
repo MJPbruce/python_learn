@@ -117,11 +117,13 @@ def read_ota_file(ota_fil_name,read_size):
     file.close()
     return ota_data_str
 
+
+#115F-1288-0000000C-
 if __name__ == '__main__':
     out = ''
     key = 'w1EHnDKllb6rmbZM'.encode('utf-8')  # key :bytes type
     file_name = r'.\nrf52840_xxaa.bin'
-    ota_file_name = r'.\115F-1288-0000000C-OTA_lumi.lunar.acn01.ota'
+    ota_file_name = r'.\OTA_lumi.lunar.acn01.zigbee'
     ota_str_data = read_ota_file(ota_file_name,298)
     str_to_txt(r'.\encrypt.txt',ota_str_data,'w+')
     
@@ -129,8 +131,8 @@ if __name__ == '__main__':
     
     out = readBinFileAndEncrypt(file_name,key)
     #print(out)
-    print(type(out))
-    print(len(out))
+    #print(type(out))
+    #print(len(out))
     str_to_txt(r'.\encrypt.txt',out,'a+')
     txt_to_bin(r'.\encrypt.txt',r'.\encrypt.bin')
     
@@ -141,8 +143,7 @@ if __name__ == '__main__':
     #print(d)
     str_to_txt(r'.\decrypt.txt',d,'w+')
     txt_to_bin(r'.\decrypt.txt',r'.\decrypt.bin')
-    
-   
+      
    
 
     #file = open(file_name,'rb')
